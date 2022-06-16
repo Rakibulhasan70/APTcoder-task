@@ -1,6 +1,4 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom'
@@ -8,7 +6,7 @@ import auth from '../../firebase.init';
 import login from '../../images/login.png'
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser] = useSignInWithGoogle(auth);
 
     const navigate = useNavigate()
 
@@ -17,8 +15,6 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        loading,
-        error,
     ] = useSignInWithEmailAndPassword(auth);
 
     if (user || gUser) {
@@ -39,7 +35,7 @@ const Login = () => {
                     <img className='rounded-lg' src={login} alt="" />
                 </div>
                 <div className='flex justify-center items-center h-screen'>
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card lg:w-3/4 w-full bg-base-100 shadow-xl">
                         <div className="card-body">
 
                             <h2 className="text-center text-2xl font-bold">Please Login</h2>
@@ -86,7 +82,7 @@ const Login = () => {
                                                 message: 'Password is require'
                                             },
                                             minLength: {
-                                                value: 6,
+                                                value: +6,
                                                 message: 'Must be six character or longer'
                                             }
                                         })}

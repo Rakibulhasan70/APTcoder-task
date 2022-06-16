@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gError] = useSignInWithGoogle(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -17,7 +17,7 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
+
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
