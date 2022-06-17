@@ -1,11 +1,13 @@
 import React from 'react';
+import aptcoder from '../../images/aptcoder.png'
+import './Home.css'
 
 const Home = () => {
     return (
         <div>
-            <h3>Sohag</h3>
+            <img class="center-block" src={aptcoder} alt="" />
         </div>
     );
 };
 
-export default Home;
+export default Home; 

@@ -13,9 +13,9 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side ">
                     <label for="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-48   text-base-content bg-primary">
-                        <li><Link to='/dasboard'>Admin Details</Link></li>
-                        <li><Link to='/dasboard/employer'>Employer List</Link></li>
+                    <ul className="menu p-4 overflow-y-auto w-48   text-base-content" style={{ backgroundColor: 'lightgrey' }}>
+                        <li><Link to='/dasboard' className='text-xl'>Admin Details</Link></li>
+                        <li><Link to='/dasboard/employer' className='text-xl'>Employer List</Link></li>
                     </ul>
 
                 </div>
